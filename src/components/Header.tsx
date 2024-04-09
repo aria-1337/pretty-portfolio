@@ -5,8 +5,12 @@ export default function Header() {
     return (<Container>
         <TitleContainer>
             <TextContainer>
-                <Name>Aria Lopez <SubText>(She/They)</SubText> </Name>
+                <Name>Aria Lopez</Name>
                 <Title>Fullstack Engineer</Title>
+                <LocationContainer>
+                    <Svg src="/location-pin.svg" />
+                    <SubText>San Francisco, CA</SubText>
+                </LocationContainer>
             </TextContainer>
             <Image src="logo-large.png" />
         </TitleContainer>
@@ -20,7 +24,7 @@ export default function Header() {
     </Container>);
 }
 
-const SubText = styled.a`
+const SubText = styled.p`
     margin: 0;
     font-size: 12px;
     color: orange;
@@ -29,6 +33,14 @@ const SubText = styled.a`
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+`;
+
+const LocationContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-top: 4px;
 `;
 
 const TitleContainer = styled.div`
@@ -65,6 +77,11 @@ const Image = styled.img`
         height: auto;
         width: 75px;
     }
+`;
+
+const Svg = styled.img`
+    height: 15px;
+    width: auto;
 `;
 
 const NavContainer = styled.div`
