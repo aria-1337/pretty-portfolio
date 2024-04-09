@@ -5,9 +5,8 @@ export default function Header() {
     return (<Container>
         <TitleContainer>
             <TextContainer>
-                <Name>Aria Lopez</Name>
+                <Name>Aria Lopez <SubText>(She/They)</SubText> </Name>
                 <Title>Fullstack Engineer</Title>
-                <LOL>SITE IN DEVELOPMENT</LOL>
             </TextContainer>
             <Image src="logo-large.png" />
         </TitleContainer>
@@ -21,9 +20,9 @@ export default function Header() {
     </Container>);
 }
 
-const LOL = styled.p`
+const SubText = styled.a`
     margin: 0;
-    font-size: 10px;
+    font-size: 12px;
     color: orange;
 `;
 
@@ -39,6 +38,10 @@ const TitleContainer = styled.div`
     border-radius: 7px;
     padding: 10px;
     justify-content: space-between;
+    @media (max-width: 350px) {
+        flex-direction: column;
+        margin: 10px;
+    }
 `;
 
 const Name = styled.h1`
@@ -58,11 +61,18 @@ const TextContainer = styled.div`
 const Image = styled.img`
     height: 75px;
     width: auto;
+    @media (max-width: 350px) {
+        height: auto;
+        width: 75px;
+    }
 `;
 
 const NavContainer = styled.div`
     display: flex;
     flex-direction: row;
+    @media (max-width: 350px) {
+        flex-direction: column;
+    }
 `;
 
 const NavButton = styled.button`
@@ -77,5 +87,6 @@ const NavButton = styled.button`
     margin: 5px;
     &:hover {
         background: black;
+        margin: 10px;
     }
 `;
