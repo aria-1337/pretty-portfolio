@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Background from './components/Background';
 import Header from './components/Header';
 
 export default function App() {
-  return (<Container>
+    const [content, setContent] = useState('home');
+    return (<Container>
     <Background />
     <ContentContainer>
-        <Header />
+        <Header 
+            currentContent={content}
+            setContent={setContent}
+        />
     </ContentContainer>
-  </Container>);
+    </Container>);
 }
 
 const Container = styled.div`

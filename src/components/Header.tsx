@@ -1,7 +1,12 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-export default function Header() {
+interface HeaderProps {
+    currentContent: string;
+    setContent: Function;
+}
+
+export default function Header({ currentContent, setContent }: HeaderProps) {
     return (<Container>
         <TitleContainer>
             <TextContainer>
@@ -16,10 +21,29 @@ export default function Header() {
         </TitleContainer>
 
         <NavContainer>
-            <NavButton>About</NavButton>
-            <NavButton>Expierence</NavButton>
-            <NavButton>Projects</NavButton>
-            <NavButton>Contact</NavButton>
+            <NavButton 
+                onClick={() => setContent('home')}
+                selected={currentContent === 'home'}>
+                Home
+            </NavButton>
+            
+            <NavButton 
+                onClick={() => setContent('expierence')}
+                selected={currentContent === 'expierence'}>
+                Expierence
+            </NavButton>
+            
+            <NavButton 
+                onClick={() => setContent('projects')}
+                selected={currentContent === 'projects'}>
+                Projects
+            </NavButton>
+            
+            <NavButton 
+                onClick={() => setContent('contact')}
+                selected={currentContent === 'contact'}>
+                Contact
+            </NavButton>
         </NavContainer>
     </Container>);
 }
@@ -95,8 +119,8 @@ const NavContainer = styled.div`
     }
 `;
 
-const NavButton = styled.button`
-    background: #34a4eb;
+const NavButton = styled.button<{ selected: boolean }>`
+    background: ${props => props.selected ? '#34a4eb' : 'black' };
     color: white;
     font: inherit;
     font-weight: bold;
@@ -106,7 +130,6 @@ const NavButton = styled.button`
     padding: 5px;
     margin: 5px;
     &:hover {
-        background: black;
-        margin: 10px;
+        background: #34a4eb;
     }
 `;
