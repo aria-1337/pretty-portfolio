@@ -41,6 +41,9 @@ const LocationContainer = styled.div`
     align-items: center;
     justify-content: left;
     margin-top: 4px;
+    @media (max-width: 350px) {
+        margin-bottom: 4px;
+    }
 `;
 
 const TitleContainer = styled.div`
