@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Background from './components/Background';
 import Header from './components/Header';
 import Home from './components/Home';
+import Experience from './components/Experience';
 
 export default function App() {
     const [content, setContent] = useState('home');
@@ -13,7 +14,7 @@ export default function App() {
             currentContent={content}
             setContent={setContent}
         />
-        { content === 'home' ? <Home /> : null }
+        { content === 'home' ? <Home /> : content === 'experience' ? <Experience /> : null }
     </ContentContainer>
     </Container>);
 }
