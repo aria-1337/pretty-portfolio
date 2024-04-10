@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Background from './components/Background';
 import Header from './components/Header';
+import Home from './components/Home';
 
 export default function App() {
     const [content, setContent] = useState('home');
@@ -12,6 +13,7 @@ export default function App() {
             currentContent={content}
             setContent={setContent}
         />
+        { content === 'home' ? <Home /> : null }
     </ContentContainer>
     </Container>);
 }
@@ -26,5 +28,8 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
     display: flex;
+    flex-direction: column;
     z-index: 1;
+    width: 90%;
+    height: 90%;
 `;

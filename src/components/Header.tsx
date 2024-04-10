@@ -9,17 +9,8 @@ interface HeaderProps {
 export default function Header({ currentContent, setContent }: HeaderProps) {
     return (<Container>
         <TitleContainer>
-            <TextContainer>
-                <Name>Aria Lopez</Name>
-                <Title>Fullstack Engineer</Title>
-                <LocationContainer>
-                    <Svg src="/location-pin.svg" />
-                    <SubText>San Francisco, CA</SubText>
-                </LocationContainer>
-            </TextContainer>
-            <Image src="logo-large.png" />
+            <Title>Aria Lopez | Fullstack Engineer</Title>
         </TitleContainer>
-
         <NavContainer>
             <NavButton 
                 onClick={() => setContent('home')}
@@ -57,23 +48,14 @@ const SubText = styled.p`
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-`;
-
-const LocationContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    margin-top: 4px;
-    @media (max-width: 350px) {
-        margin-bottom: 4px;
-    }
+    width: 500px;
+    margin-bottom: 3%;
 `;
 
 const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
-    background: black;
+    background: rgba(255,165,0,0.2);
     border-radius: 7px;
     padding: 10px;
     justify-content: space-between;
@@ -81,13 +63,10 @@ const TitleContainer = styled.div`
         flex-direction: column;
         margin: 10px;
     }
+    width: auto;
 `;
 
-const Name = styled.h1`
-    margin: 0;
-`;
-
-const Title = styled.p`
+const Title = styled.h1`
     margin: 0;
 `;
 
@@ -120,16 +99,16 @@ const NavContainer = styled.div`
 `;
 
 const NavButton = styled.button<{ selected: boolean }>`
-    background: ${props => props.selected ? '#34a4eb' : 'black' };
-    color: white;
+    background: ${props => props.selected ? 'rgba(225,165,0)' : 'rgba(169,18,224,0.6)' };
+    color: whitesmoke;
     font: inherit;
     font-weight: bold;
     cursor: pointer;
-    border: transparent;
+    border: rgba(169,18,224,0.4) solid 2px;
     border-radius: 7px;
-    padding: 5px;
+    padding: 10px 7px;
     margin: 5px;
     &:hover {
-        background: #34a4eb;
+        background: rgba(225,165,0, 1);
     }
 `;
