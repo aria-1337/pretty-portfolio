@@ -4,6 +4,7 @@ import Background from './components/Background';
 import Header from './components/Header';
 import Home from './components/Home';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
 
 export default function App() {
     const [content, setContent] = useState('home');
@@ -14,7 +15,7 @@ export default function App() {
             currentContent={content}
             setContent={setContent}
         />
-        { content === 'home' ? <Home /> : content === 'experience' ? <Experience /> : null }
+        { content === 'home' ? <Home /> : content === 'experience' ? <Experience /> : content === 'projects' ? <Projects /> : null }
     </ContentContainer>
     </Container>);
 }
