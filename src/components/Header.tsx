@@ -19,9 +19,9 @@ export default function Header({ currentContent, setContent }: HeaderProps) {
             </NavButton>
             
             <NavButton 
-                onClick={() => setContent('expierence')}
-                selected={currentContent === 'expierence'}>
-                Expierence
+                onClick={() => setContent('experience')}
+                selected={currentContent === 'experience'}>
+                Experience
             </NavButton>
             
             <NavButton 
@@ -39,16 +39,13 @@ export default function Header({ currentContent, setContent }: HeaderProps) {
     </Container>);
 }
 
-const SubText = styled.p`
-    margin: 0;
-    font-size: 12px;
-    color: orange;
-`;
-
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 500px;
+    @media(max-width: 500px) {
+        width: 300px;
+    }
     margin-bottom: 3%;
 `;
 
@@ -59,9 +56,8 @@ const TitleContainer = styled.div`
     border-radius: 7px;
     padding: 10px;
     justify-content: space-between;
-    @media (max-width: 350px) {
-        flex-direction: column;
-        margin: 10px;
+    @media (max-width: 500px) {
+        margin-right: 3%;
     }
     width: auto;
 `;
@@ -70,31 +66,11 @@ const Title = styled.h1`
     margin: 0;
 `;
 
-const TextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    color: whitesmoke;
-`;
-
-const Image = styled.img`
-    height: 75px;
-    width: auto;
-    @media (max-width: 350px) {
-        height: auto;
-        width: 75px;
-    }
-`;
-
-const Svg = styled.img`
-    height: 15px;
-    width: auto;
-`;
-
 const NavContainer = styled.div`
     display: flex;
     flex-direction: row;
-    @media (max-width: 350px) {
-        flex-direction: column;
+    @media(max-width: 500px) {
+        flex-wrap: wrap;
     }
 `;
 

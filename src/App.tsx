@@ -30,6 +30,7 @@ const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     z-index: 1;
-    width: 90%;
+    width: 500px;
+    margin: 10px;
     height: 90%;
 `;
