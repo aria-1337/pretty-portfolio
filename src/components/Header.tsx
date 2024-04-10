@@ -9,7 +9,23 @@ interface HeaderProps {
 export default function Header({ currentContent, setContent }: HeaderProps) {
     return (<Container>
         <TitleContainer>
-            <Title>Aria Lopez | Fullstack Engineer</Title>
+            <NameContainer>
+                <Title>Aria Lopez</Title>
+                <SubTitle>Fullstack Engineer</SubTitle>
+            </NameContainer>
+
+            <SocialContainer>
+                <SocialButton target="_blank" href="https://www.linkedin.com/in/arialopez/">
+                    <SocialImg src="/linkedin.png" />
+                    <P>@arialopez</P>
+                </SocialButton>
+
+                <SocialButton target="_blank" href="https://github.com/aria-1337">
+                    <SocialImg src="/github.svg" />
+                    <P>@aria-1337</P>
+                </SocialButton>
+
+            </SocialContainer>
         </TitleContainer>
         <NavContainer>
             <NavButton 
@@ -29,24 +45,33 @@ export default function Header({ currentContent, setContent }: HeaderProps) {
                 selected={currentContent === 'projects'}>
                 Projects
             </NavButton>
-            
-            <NavButton 
-                onClick={() => setContent('contact')}
-                selected={currentContent === 'contact'}>
-                Contact
-            </NavButton>
         </NavContainer>
     </Container>);
 }
+
+const P = styled.p`
+    margin: 0;
+`;
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 500px;
     @media(max-width: 500px) {
-        width: 300px;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
     }
     margin-bottom: 3%;
+`;
+
+const SubTitle = styled.h3`
+    margin: 0;
+`;
+
+const NameContainer = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 const TitleContainer = styled.div`
@@ -57,9 +82,11 @@ const TitleContainer = styled.div`
     padding: 10px;
     justify-content: space-between;
     @media (max-width: 500px) {
-        margin-right: 3%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-left: 10%;
     }
-    width: auto;
 `;
 
 const Title = styled.h1`
@@ -87,4 +114,27 @@ const NavButton = styled.button<{ selected: boolean }>`
     &:hover {
         background: rgba(225,165,0, 1);
     }
+`;
+
+const SocialContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+const SocialImg = styled.img`
+    width: auto;
+    height: 25px;
+    margin-right: 5px;
+`;
+
+const SocialButton = styled.a`
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px;
 `;
